@@ -8,8 +8,8 @@ warnings.filterwarnings("ignore", category=UserWarning, module='huggingface_hub.
 class ImageEncoder(nn.Module):
     def __init__(self):
         super(ImageEncoder, self).__init__()
-        self.CLIP = CLIPModel.from_pretrained("openai/clip-vit-large-patch14")
-        self.image_processor = AutoProcessor.from_pretrained("openai/clip-vit-large-patch14")
+        self.CLIP = CLIPModel.from_pretrained("laion/CLIP-ViT-H-14-laion2B-s32B-b79K")
+        self.image_processor = AutoProcessor.from_pretrained("laion/CLIP-ViT-H-14-laion2B-s32B-b79K")
         self.mlp = nn.Sequential(nn.Linear(768, 768),
                                  nn.ReLU(),
                                  nn.Linear(768, 512))
